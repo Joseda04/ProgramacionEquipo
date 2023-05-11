@@ -79,6 +79,20 @@ public class ColectivoConvertirPesetas {
         return resultado;
 
     }
+    public class ConversorMoneda {
+    public static double eurosADolares(double euros) {
+        double tipoCambio = 1.18; // Tipo de cambio actual
+        double dolares = euros * tipoCambio;
+        return dolares;
+    }
+
+    public static void main(String[] args) {
+        double euros = 100; // Cantidad en euros a convertir
+        double dolares = eurosADolares(euros);
+        System.out.println(euros + " euros son equivalentes a " + dolares + " dólares.");
+    }
+}
+
 }
     
    
