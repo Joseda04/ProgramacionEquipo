@@ -37,11 +37,13 @@ public class ColectivoConvertirPesetas {
 
                 if (opciones == 1) {
                     System.out.println("Introduzca cantidad: ");
+                    System.out.println("En Pesetas");
                     pesetas = sc.nextInt();
                     resultadoEuros = pasarAEuros(pesetas);
                     System.out.println("Son " + redondearNdecimales(resultadoEuros, 2) + " euros");
                 } else if (opciones == 2) {
                     System.out.println("Introduzca cantidad: ");
+                    System.out.println("En Euros");
                     euros = sc.nextFloat();
                     System.out.println("Son " + pasarAPesetas(euros) + " pesetas");
                 }
