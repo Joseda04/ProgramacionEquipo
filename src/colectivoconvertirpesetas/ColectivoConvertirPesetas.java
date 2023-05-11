@@ -38,16 +38,48 @@ public class ColectivoConvertirPesetas {
                 if (opciones == 1) {
                     System.out.println("Introduzca cantidad: ");
                     pesetas = sc.nextInt();
-                   
+                    resultadoEuros = pasarAEuros(pesetas);
+                    System.out.println("Son " + redondearNdecimales(resultadoEuros, 2) + " euros");
                 } else if (opciones == 2) {
                     System.out.println("Introduzca cantidad: ");
                     euros = sc.nextFloat();
-                   
+                    System.out.println("Son " + pasarAPesetas(euros) + " pesetas");
                 }
             }
             System.out.println("SIGUIENTE CASO");
             opciones = 0;
         }
     }
-    
+
+    static int pasarAPesetas(float euros) {
+        int resultado = 0;
+        float valorPeseta = 166.386F;
+
+        resultado = (int) Math.round(valorPeseta * euros);
+        return resultado;
+
+    }
+
+    static float pasarAEuros(int pesetas) {
+        float resultado;
+        float valorPeseta = 166.386F;
+
+        resultado = (pesetas / valorPeseta);
+
+        return resultado;
+    }
+
+    static float redondearNdecimales(float numero, int decimales) {
+
+        float resultado = 0;
+        float numeroDecimales = 0;
+
+        numeroDecimales = (float) Math.pow(10, decimales);
+        resultado = Math.round(numero * numeroDecimales) / numeroDecimales;
+        return resultado;
+
+    }
 }
+    
+   
+
